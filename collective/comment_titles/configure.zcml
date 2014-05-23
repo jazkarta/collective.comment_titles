@@ -1,0 +1,30 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="collective.comment_titles">
+
+  <five:registerPackage package="." initialize=".initialize" />
+
+  <genericsetup:registerProfile
+      name="default"
+      title="collective.comment_titles"
+      directory="profiles/default"
+      description="Installs the collective.comment_titles package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <adapter
+    factory=".commentextender.CommentExtenderFactory"
+    provides=".commentextender.ICommentExtenderFields"
+    layer=".interfaces.ExtenderLayer"
+    />
+
+  <adapter
+    factory=".commentextender.CommentExtender"
+    provides="plone.z3cform.fieldsets.interfaces.IFormExtender"
+    layer=".interfaces.ExtenderLayer"
+    />
+
+</configure>
