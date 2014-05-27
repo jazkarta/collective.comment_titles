@@ -25,7 +25,7 @@ setup(name='collective.comment_titles',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          # -*- Extra requirements: -*-
+          'z3c.jbot',
       ],
       entry_points="""
       # -*- Entry points: -*-
