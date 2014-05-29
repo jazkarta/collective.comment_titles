@@ -1,0 +1,8 @@
+<registry>
+  <record field="globally_enabled" interface="plone.app.discussion.interfaces.IDiscussionSettings" name="plone.app.discussion.interfaces.IDiscussionSettings.globally_enabled">
+    <value purge="true">True</value>
+  </record>
+  <record field="show_commenter_image" interface="plone.app.discussion.interfaces.IDiscussionSettings" name="plone.app.discussion.interfaces.IDiscussionSettings.show_commenter_image">
+    <value purge="true">False</value>
+  </record>
+</registry>
