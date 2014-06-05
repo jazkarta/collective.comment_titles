@@ -1,7 +1,7 @@
 <tal:block tal:define="userHasReplyPermission view/can_reply;
                        isDiscussionAllowed view/is_discussion_allowed;
                        isAnonymousDiscussionAllowed view/anonymous_discussion_allowed;
-                       isAnon view/is_anonymous;
+                       isAnon python:request.get('HTTP_X_ANONYMOUS', False) or view.is_anonymous();
                        canReview view/can_review;
                        replies python:view.get_replies(canReview);
                        has_replies python:view.has_replies(canReview);
