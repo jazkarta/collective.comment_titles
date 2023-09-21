@@ -25,8 +25,8 @@ class ICommentExtenderFields(Interface):
 
 
 # Persistent class that implements the ICommentExtenderFields interface
+@interface.implementer(ICommentExtenderFields)
 class CommentExtenderFields(Persistent):
-    interface.implements(ICommentExtenderFields)
     adapts(Comment)
     title = u""
 
